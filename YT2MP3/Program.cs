@@ -1,9 +1,14 @@
-﻿using System;
+﻿using CliWrap;
+using System;
 using System.Collections.Generic;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
+using System.Net.Http;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using YoutubeExplode;
+using YoutubeExplode.Converter;
 using YoutubeExplode.Playlists;
 using YoutubeExplode.Videos;
 using YoutubeExplode.Videos.Streams;
@@ -17,17 +22,22 @@ namespace YT2MP3
         enum MediaType { VIDEO, AUDIO, MIXED };
 
         static YoutubeClient yt = new YoutubeClient();
+        static YoutubeConverter converter = new YoutubeConverter();
 
         static DownloadType? downloadType;
         static MediaType? mediaType;
         static string videoUrl = null;
         static string videoId = null;
         static string outputPath = null;
-        //static string containerType = null;
+        static string mimeType = null;
         static bool showInfo = false;
+        static bool skipIfPresent = false;
 
         static async Task Main(string[] _args)
         {
+            //Check if FFMPEG is present
+            await FFMPEG();
+
             if (_args.Length < 1)
             {
                 Alert("Invalid amount of args", Type.WARNING, true, true);
@@ -51,7 +61,7 @@ namespace YT2MP3
                 return;
             }
 
-            Alert($"dtype: {downloadType}, mtype: {mediaType}, url: {videoUrl}, id: {videoId}, output: {outputPath}", Type.DEBUG, true, true);
+            //Alert($"dtype: {downloadType}, mtype: {mediaType}, url: {videoUrl}, id: {videoId}, output: {outputPath}", Type.DEBUG, true, true);
             
             if(downloadType == DownloadType.PLAYLIST)
             {
@@ -106,10 +116,74 @@ namespace YT2MP3
 
         }
 
+        static async Task FFMPEG()
+        {
+            var path = Path.Combine(Environment.CurrentDirectory, FFMPEGName());
+
+            if (File.Exists(path))
+                return;
+
+            Alert("FFMPEG is not present. ", Type.WARNING, false, true);
+            Alert("We'll download it for you. Have a moment... ", writeLine: false);
+
+
+            try
+            {
+                using var httpClient = new HttpClient();
+                await using var zipStream = await httpClient.GetStreamAsync(FFMPEGDownloadURL());
+                using var zip = new ZipArchive(zipStream, ZipArchiveMode.Read);
+
+                var entry = zip.GetEntry(FFMPEGName());
+                await using var entryStream = entry.Open();
+                await using var fileStream = File.Create(path);
+                await entryStream.CopyToAsync(fileStream);
+                Alert("DONE", Type.SUCCESS);
+            }
+            catch (Exception e)
+            {
+                Alert($"FAILED ({e.Message})", Type.ERROR);
+                Alert(e.ToString(), Type.DEBUG);
+                Alert("Failed to download ffmpeg. Please try it by hand", Type.FATAL, showType: true);
+            }
+
+            if(!RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+            {
+                Alert("Hey linux user! We need to set chmod x permissions for ffmpeg... ", Type.WARNING, false, true);
+                try
+                {
+                    //Ensure permissions
+                    await Cli.Wrap("/bin/bash").WithArguments(new[] { "-c", $"chmod +x {path}" }).ExecuteAsync();
+                    Alert("DONE", Type.SUCCESS);
+                } 
+                catch(Exception e)
+                {
+                    Alert($"FAILED ({e.Message})", Type.ERROR);
+                    Alert(e.ToString(), Type.DEBUG);
+                    Alert("Failed to set permissions. Please try it by hand", Type.FATAL, showType: true);
+                }
+            }
+        }
+
+        static string FFMPEGDownloadURL()
+        {
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+                return "https://github.com/vot/ffbinaries-prebuilt/releases/download/v4.2.1/ffmpeg-4.2.1-win-64.zip";
+
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+                return "https://github.com/vot/ffbinaries-prebuilt/releases/download/v4.2.1/ffmpeg-4.2.1-linux-64.zip";
+
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+                return "https://github.com/vot/ffbinaries-prebuilt/releases/download/v4.2.1/ffmpeg-4.2.1-osx-64.zip";
+
+            return "";
+        }
+
+        static string FFMPEGName() => (RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ? "ffmpeg.exe" : "ffmpeg");
+
         static async Task Download(Video video)
         {
             var manifest = await yt.Videos.Streams.GetManifestAsync(video.Id);
-            Alert($"- Downloading {video.Title} ({video.Duration})... ", writeLine: false);
+            Alert($"- Downloading {((mimeType == null) ? "" : "(and converting)")} {video.Title} ({video.Duration})... ", writeLine: false);
 
             var _c = GetCursor();
 
@@ -136,12 +210,27 @@ namespace YT2MP3
             foreach (char c in invalid) name = name.Replace(c.ToString(), "");
 
             path = Path.Combine(path, name);
+            if (mimeType != null) path = path.Replace(streamInfo.Container.Name, mimeType);
+
+
+            //Check if present
+            if(skipIfPresent)
+            {
+                if(File.Exists(path))
+                {
+                    Alert($"SKIPPED", Type.WARNING);
+                    return;
+                }
+            }
 
             //get stream
             //var stream = await yt.Videos.Streams.GetAsync(streamInfo);
 
             //Saving
-            await yt.Videos.Streams.DownloadAsync(streamInfo, path);
+            if (mimeType == null)
+                await yt.Videos.Streams.DownloadAsync(streamInfo, path);
+            else
+                await converter.DownloadVideoAsync(manifest, path, mimeType);
 
             SetCursor(_c);
             Alert($"DONE", Type.SUCCESS);
@@ -225,12 +314,16 @@ namespace YT2MP3
             Alert("\nOther", Type.DEBUG);
             Alert("\t-I", Type.INFO, false);
             Alert("\t(Don't download, but only show information)");
+            Alert("\t-t", Type.INFO, false);
+            Alert("\t(Set mime type, like 'mp4', 'mp3', 'webm')");
+            Alert("\t-s", Type.INFO, false);
+            Alert("\t(Skip video if present in directory)");
 
             Alert("\nProtip", Type.DEBUG);
             Alert("You can use multiple arguments at once, like to show info about a video by id: ", writeLine: false);
             Alert("YT2MP3 -vIi AkRiYsTN", Type.INFO);
             Alert("You can also write this as: ", writeLine: false);
-            Alert("YT2MP4 -v -I -i AkRiYsTN", Type.INFO);
+            Alert("YT2MP3 -v -I -i AkRiYsTN", Type.INFO);
 
         }
 
@@ -287,9 +380,12 @@ namespace YT2MP3
                             break;
                         //5. Set optional values
                         //TODO: Add container/file type, bitrate, converters etc.
-                        /*case 'f': //file type
-                            containerType = args[i + 1];
-                            break;*/
+                        case 't': //file type
+                            mimeType = args[i + 1];
+                            break;
+                        case 's': //Skip if present
+                            skipIfPresent = true;
+                            break;
                         default:
                             Alert($"Unknown argument: --{a}", Type.WARNING, true, true);
                             break;
@@ -362,16 +458,5 @@ namespace YT2MP3
 
         static (int top, int left) GetCursor() => (Console.CursorTop, Console.CursorLeft);
         static void SetCursor((int top, int left) pos) => Console.SetCursorPosition(pos.left, pos.top);
-
-        /*static Container GetContainer(string type)
-        {
-            return type.ToLower() switch
-            {
-                "mp4" => Container.Mp4,
-                "webm" => Container.WebM,
-                "tgpp" => Container.Tgpp,
-                _ => Container.Parse(type)
-            };
-        }*/
     }
 }
