@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30309.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YT2MP3", "YT2MP3\YT2MP3.csproj", "{1C093F48-C4E1-4C43-8742-DF464C81B97D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1C093F48-C4E1-4C43-8742-DF464C81B97D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C093F48-C4E1-4C43-8742-DF464C81B97D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C093F48-C4E1-4C43-8742-DF464C81B97D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C093F48-C4E1-4C43-8742-DF464C81B97D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FAF6DFBD-14F6-4587-B3B8-4D467BF3FBDF}
+	EndGlobalSection
+EndGlobal
