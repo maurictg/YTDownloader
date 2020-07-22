@@ -27,8 +27,10 @@ Set the media type of the stream you want to download
 
 Other
         -I      (Don't download, but only show information)
+        -t      (Set mime type, like 'mp4', 'mp3', 'webm')
+        -s      (Skip video if present in directory)
 
 Protip
 You can use multiple arguments at once, like to show info about a video by id: YT2MP3 -vIi AkRiYsTN
-You can also write this as: YT2MP4 -v -I -i AkRiYsTN
+You can also write this as: YT2MP3 -v -I -i AkRiYsTN
 ```
