@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
+using System.Threading;
 using YoutubeExplode;
 using YoutubeExplode.Converter;
 using YoutubeExplode.Playlists;
@@ -19,7 +20,7 @@ namespace YT2MP3
     {
         enum Type { INFO, WARNING, SUCCESS, ERROR, FATAL, DEBUG, LOG };
         enum DownloadType { VIDEO, PLAYLIST };
-        enum MediaType { VIDEO, AUDIO, MIXED };
+        enum MediaType { VIDEO, AUDIO, MUXED };
 
         static YoutubeClient yt = new YoutubeClient();
         static YoutubeConverter converter = new YoutubeConverter();
@@ -191,7 +192,7 @@ namespace YT2MP3
             {
                 MediaType.AUDIO => manifest.GetAudioOnly().WithHighestBitrate(),
                 MediaType.VIDEO => manifest.GetVideoOnly().WithHighestVideoQuality(),
-                MediaType.MIXED => manifest.GetMuxed().WithHighestVideoQuality(),
+                MediaType.MUXED => manifest.GetMuxed().WithHighestVideoQuality(),
                 _ => null
             };
 
@@ -373,7 +374,7 @@ namespace YT2MP3
                             mediaType = MediaType.AUDIO;
                             break;
                         case 'M':
-                            mediaType = MediaType.MIXED;
+                            mediaType = MediaType.MUXED;
                             break;
                         case 'm':
                             mediaType = GetType(args[i + 1]);
@@ -450,8 +451,8 @@ namespace YT2MP3
                 "video" => MediaType.VIDEO,
                 "a" => MediaType.AUDIO,
                 "audio" => MediaType.AUDIO,
-                "m" => MediaType.MIXED,
-                "muxed" => MediaType.MIXED,
+                "m" => MediaType.MUXED,
+                "muxed" => MediaType.MUXED,
                 _ => null
             };
         }

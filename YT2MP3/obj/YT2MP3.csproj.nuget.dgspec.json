@@ -45,7 +45,7 @@
           "dependencies": {
             "YoutubeExplode": {
               "target": "Package",
-              "version": "[5.1.2, )"
+              "version": "[5.1.4, )"
             },
             "YoutubeExplode.Converter": {
               "target": "Package",
@@ -67,7 +67,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

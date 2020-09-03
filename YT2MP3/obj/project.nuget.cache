@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "9iCUajUVZC9kRp9BzfwthmkpQZwv8D/5J9jdiQSbbsGJ5DfNLKdZ17xR/cZS62drPHz9axVy6PDD6qJF23As6w==",
+  "dgSpecHash": "cTSWr6Vag4twixHWv2Z3n0oihRqFvt655RmdVtc1+keAWBq3uvDiuQJUEpSKwoX5j3S66P+vM5vWCFDmiaouog==",
   "success": true,
   "projectFilePath": "C:\\Users\\mauri\\source\\repos\\YT2MP3\\YT2MP3\\YT2MP3.csproj",
   "expectedPackageFiles": [
@@ -9,7 +9,7 @@
     "C:\\Users\\mauri\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
     "C:\\Users\\mauri\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.0\\system.runtime.compilerservices.unsafe.4.5.0.nupkg.sha512",
     "C:\\Users\\mauri\\.nuget\\packages\\system.text.encoding.codepages\\4.5.0\\system.text.encoding.codepages.4.5.0.nupkg.sha512",
-    "C:\\Users\\mauri\\.nuget\\packages\\youtubeexplode\\5.1.2\\youtubeexplode.5.1.2.nupkg.sha512",
+    "C:\\Users\\mauri\\.nuget\\packages\\youtubeexplode\\5.1.4\\youtubeexplode.5.1.4.nupkg.sha512",
     "C:\\Users\\mauri\\.nuget\\packages\\youtubeexplode.converter\\1.5.1\\youtubeexplode.converter.1.5.1.nupkg.sha512"
   ],
   "logs": []
