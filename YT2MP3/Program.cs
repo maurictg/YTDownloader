@@ -23,7 +23,6 @@ namespace YT2MP3
         enum MediaType { VIDEO, AUDIO, MUXED };
 
         static YoutubeClient yt = new YoutubeClient();
-        static YoutubeConverter converter = new YoutubeConverter();
 
         static DownloadType? downloadType;
         static MediaType? mediaType;
@@ -88,6 +87,7 @@ namespace YT2MP3
                     catch(Exception e)
                     {
                         Alert(e.Message, Type.ERROR, showType: true);
+                        //Alert(e.ToString(), Type.DEBUG);
                     }
                 }
 
@@ -111,6 +111,7 @@ namespace YT2MP3
                 catch (Exception e)
                 {
                     Alert(e.Message, Type.ERROR, showType: true);
+                    //Alert(e.ToString(), Type.DEBUG);
                 }
 
             }
@@ -119,7 +120,7 @@ namespace YT2MP3
 
         static async Task FFMPEG()
         {
-            var path = Path.Combine(Environment.CurrentDirectory, FFMPEGName());
+            var path = FFMPEGPATH();
 
             if (File.Exists(path))
                 return;
@@ -181,6 +182,8 @@ namespace YT2MP3
 
         static string FFMPEGName() => (RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ? "ffmpeg.exe" : "ffmpeg");
 
+        static string FFMPEGPATH() => Path.Combine(Environment.CurrentDirectory, FFMPEGName());
+        
         static async Task Download(Video video)
         {
             var manifest = await yt.Videos.Streams.GetManifestAsync(video.Id);
@@ -231,7 +234,11 @@ namespace YT2MP3
             if (mimeType == null)
                 await yt.Videos.Streams.DownloadAsync(streamInfo, path);
             else
-                await converter.DownloadVideoAsync(manifest, path, mimeType);
+            {
+                await yt.Videos.DownloadAsync(video.Id, path, o 
+                    => o.SetFormat(mimeType).SetPreset(ConversionPreset.UltraFast).SetFFmpegPath(FFMPEGPATH())
+                );
+            }
 
             SetCursor(_c);
             Alert($"DONE", Type.SUCCESS);
@@ -416,6 +423,7 @@ namespace YT2MP3
                 catch(Exception e)
                 {
                     Alert(e.Message, Type.ERROR, showType: true);
+                    //Alert(e.ToString(), Type.DEBUG);
                 }
 
                 Environment.Exit(0);

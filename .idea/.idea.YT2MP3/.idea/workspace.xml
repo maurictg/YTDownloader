@@ -5,6 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="055dc234-d08e-4aeb-868d-fe7000c71f03" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.YT2MP3/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.YT2MP3/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.YT2MP3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.YT2MP3/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YT2MP3/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/YT2MP3/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/YT2MP3/YT2MP3.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/YT2MP3/YT2MP3.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -15,6 +18,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/YT2MP3/Program.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="JsbtTreeLayoutManager">
+    <layout place="tools.popupGrunt">
+      <scroll-view-position x="0" y="0" />
+    </layout>
+  </component>
   <component name="ProjectId" id="1iGeyF72dLmPjg0qkRR9kyCvaN5" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -24,6 +39,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -55,33 +71,45 @@
       <option name="presentableId" value="Default" />
       <updated>1601538616038</updated>
       <workItem from="1601538619982" duration="53000" />
+      <workItem from="1604487237815" duration="167000" />
+      <workItem from="1604487462147" duration="15000" />
+      <workItem from="1604487526011" duration="361000" />
+      <workItem from="1605785958589" duration="991000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1860" height="250" key="GridCell.Tab.0.bottom" timestamp="1601538673753">
+    <state width="1860" height="250" key="GridCell.Tab.0.bottom" timestamp="1604487405873">
       <screen x="0" y="0" width="1920" height="1035" />
     </state>
-    <state width="1860" height="250" key="GridCell.Tab.0.bottom/0.0.1920.1035@0.0.1920.1035" timestamp="1601538673753" />
-    <state width="1860" height="250" key="GridCell.Tab.0.center" timestamp="1601538673752">
+    <state width="1860" height="250" key="GridCell.Tab.0.bottom/0.0.1920.1035@0.0.1920.1035" timestamp="1604487405873" />
+    <state width="1860" height="250" key="GridCell.Tab.0.center" timestamp="1604487405872">
       <screen x="0" y="0" width="1920" height="1035" />
     </state>
-    <state width="1860" height="250" key="GridCell.Tab.0.center/0.0.1920.1035@0.0.1920.1035" timestamp="1601538673752" />
-    <state width="1860" height="250" key="GridCell.Tab.0.left" timestamp="1601538673751">
+    <state width="1860" height="250" key="GridCell.Tab.0.center/0.0.1920.1035@0.0.1920.1035" timestamp="1604487405872" />
+    <state width="1860" height="250" key="GridCell.Tab.0.left" timestamp="1604487405872">
       <screen x="0" y="0" width="1920" height="1035" />
     </state>
-    <state width="1860" height="250" key="GridCell.Tab.0.left/0.0.1920.1035@0.0.1920.1035" timestamp="1601538673751" />
-    <state width="1860" height="250" key="GridCell.Tab.0.right" timestamp="1601538673753">
+    <state width="1860" height="250" key="GridCell.Tab.0.left/0.0.1920.1035@0.0.1920.1035" timestamp="1604487405872" />
+    <state width="1860" height="250" key="GridCell.Tab.0.right" timestamp="1604487405872">
       <screen x="0" y="0" width="1920" height="1035" />
     </state>
-    <state width="1860" height="250" key="GridCell.Tab.0.right/0.0.1920.1035@0.0.1920.1035" timestamp="1601538673753" />
+    <state width="1860" height="250" key="GridCell.Tab.0.right/0.0.1920.1035@0.0.1920.1035" timestamp="1604487405872" />
+    <state x="802" y="341" width="313" height="349" key="jetbrains.javascript.buildTools.run-task-popup" timestamp="1604487823180">
+      <screen x="0" y="0" width="1920" height="1035" />
+    </state>
+    <state x="802" y="341" width="313" height="349" key="jetbrains.javascript.buildTools.run-task-popup/0.0.1920.1035@0.0.1920.1035" timestamp="1604487823180" />
+    <state x="539" y="0" width="840" height="1033" key="search.everywhere.popup" timestamp="1604487861997">
+      <screen x="0" y="0" width="1920" height="1035" />
+    </state>
+    <state x="539" y="0" width="840" height="1033" key="search.everywhere.popup/0.0.1920.1035@0.0.1920.1035" timestamp="1604487861997" />
   </component>
 </project>
