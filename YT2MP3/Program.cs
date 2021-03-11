@@ -82,7 +82,8 @@ namespace YT2MP3
                 {
                     try
                     {
-                        await Download(video);
+                        var vid = await yt.Videos.GetAsync(video.Id);
+                        await Download(vid);
                     }
                     catch(Exception e)
                     {
@@ -271,12 +272,8 @@ namespace YT2MP3
             Alert(playlist.Title);
             Alert("Author: ", Type.INFO, false);
             Alert(playlist.Author);
-            Alert("Likes: ", Type.INFO, false);
-            Alert(playlist.Engagement.LikeCount.ToString(), Type.SUCCESS);
-            Alert("Dislikes: ", Type.INFO, false);
-            Alert(playlist.Engagement.DislikeCount.ToString(), Type.ERROR);
             Alert("Views: ", Type.INFO, false);
-            Alert(playlist.Engagement.ViewCount.ToString());
+            Alert(playlist.ViewCount.ToString());
             Alert("Description:", Type.INFO);
             Alert(playlist.Description);
             Alert("=============================", Type.SUCCESS);

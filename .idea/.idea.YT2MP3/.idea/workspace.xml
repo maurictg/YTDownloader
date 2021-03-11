@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="055dc234-d08e-4aeb-868d-fe7000c71f03" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.YT2MP3/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.YT2MP3/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.YT2MP3/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.YT2MP3/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.YT2MP3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.YT2MP3/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/YT2MP3/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/YT2MP3/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/YT2MP3/YT2MP3.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/YT2MP3/YT2MP3.csproj" afterDir="false" />
@@ -18,12 +19,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/38C93EDF-A4D2-450E-A69C-46E9EDE9AB6F/46/4c548ea8/Cli.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/YT2MP3/Program.cs" />
-      </list>
-    </option>
+    <changedPaths>
+      <option value="$PROJECT_DIR$/YT2MP3/Program.cs" />
+    </changedPaths>
   </component>
   <component name="JsbtTreeLayoutManager">
     <layout place="tools.popupGrunt">
@@ -74,7 +76,11 @@
       <workItem from="1604487237815" duration="167000" />
       <workItem from="1604487462147" duration="15000" />
       <workItem from="1604487526011" duration="361000" />
-      <workItem from="1605785958589" duration="991000" />
+      <workItem from="1605785958589" duration="1255000" />
+      <workItem from="1606468912823" duration="38000" />
+      <workItem from="1615204648388" duration="336000" />
+      <workItem from="1615290913410" duration="189000" />
+      <workItem from="1615455686705" duration="781000" />
     </task>
     <servers />
   </component>
