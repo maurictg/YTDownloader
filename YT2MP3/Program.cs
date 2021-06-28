@@ -194,9 +194,9 @@ namespace YT2MP3
 
             var streamInfo = mediaType switch
             {
-                MediaType.AUDIO => manifest.GetAudioOnly().WithHighestBitrate(),
-                MediaType.VIDEO => manifest.GetVideoOnly().WithHighestVideoQuality(),
-                MediaType.MUXED => manifest.GetMuxed().WithHighestVideoQuality(),
+                MediaType.AUDIO => manifest.GetAudioOnlyStreams().GetWithHighestBitrate(),
+                MediaType.VIDEO => manifest.GetVideoOnlyStreams().GetWithHighestVideoQuality(),
+                MediaType.MUXED => manifest.GetMuxedStreams().GetWithHighestVideoQuality(),
                 _ => null
             };
 
@@ -251,7 +251,7 @@ namespace YT2MP3
             Alert("Title: ", Type.INFO, false);
             Alert(video.Title);
             Alert("Author: ", Type.INFO, false);
-            Alert(video.Author);
+            Alert(video.Author.Title);
             Alert("Duration: ", Type.INFO, false);
             Alert(video.Duration.ToString());
             Alert("Likes: ", Type.INFO, false);
@@ -271,9 +271,7 @@ namespace YT2MP3
             Alert("Title: ", Type.INFO, false);
             Alert(playlist.Title);
             Alert("Author: ", Type.INFO, false);
-            Alert(playlist.Author);
-            Alert("Views: ", Type.INFO, false);
-            Alert(playlist.ViewCount.ToString());
+            Alert(playlist.Author.Title);
             Alert("Description:", Type.INFO);
             Alert(playlist.Description);
             Alert("=============================", Type.SUCCESS);

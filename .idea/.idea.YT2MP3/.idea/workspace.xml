@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="055dc234-d08e-4aeb-868d-fe7000c71f03" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.YT2MP3/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.YT2MP3/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.YT2MP3/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.YT2MP3/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.YT2MP3/.idea/contentModel.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.YT2MP3/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.YT2MP3/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.YT2MP3/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.YT2MP3/.idea/riderModule.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.YT2MP3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.YT2MP3/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.YT2MP3/riderModule.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/YT2MP3/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/YT2MP3/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/YT2MP3/YT2MP3.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/YT2MP3/YT2MP3.csproj" afterDir="false" />
     </list>
@@ -19,9 +22,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/38C93EDF-A4D2-450E-A69C-46E9EDE9AB6F/46/4c548ea8/Cli.cs" root0="SKIP_HIGHLIGHTING" />
-  </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/YT2MP3/Program.cs" />
@@ -32,6 +32,9 @@
       <scroll-view-position x="0" y="0" />
     </layout>
   </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="ox5zambj" />
+  </component>
   <component name="ProjectId" id="1iGeyF72dLmPjg0qkRR9kyCvaN5" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -40,6 +43,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -81,6 +85,9 @@
       <workItem from="1615204648388" duration="336000" />
       <workItem from="1615290913410" duration="189000" />
       <workItem from="1615455686705" duration="781000" />
+      <workItem from="1619207116383" duration="137000" />
+      <workItem from="1619207381871" duration="33000" />
+      <workItem from="1619208335838" duration="28000" />
     </task>
     <servers />
   </component>
