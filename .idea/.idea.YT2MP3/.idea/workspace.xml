@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="055dc234-d08e-4aeb-868d-fe7000c71f03" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.YT2MP3/.idea/contentModel.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.YT2MP3/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.YT2MP3/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.YT2MP3/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.YT2MP3/.idea/riderModule.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.YT2MP3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.YT2MP3/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.YT2MP3/riderModule.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/YT2MP3/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/YT2MP3/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/YT2MP3/YT2MP3.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/YT2MP3/YT2MP3.csproj" afterDir="false" />
     </list>
@@ -21,6 +16,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/977a9a60b2a747ddb55f10977783e97415000/bd/dd8fc602/Cli.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -34,6 +32,9 @@
   </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="ox5zambj" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="1iGeyF72dLmPjg0qkRR9kyCvaN5" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -88,6 +89,9 @@
       <workItem from="1619207116383" duration="137000" />
       <workItem from="1619207381871" duration="33000" />
       <workItem from="1619208335838" duration="28000" />
+      <workItem from="1641235243049" duration="451000" />
+      <workItem from="1641235813969" duration="991000" />
+      <workItem from="1641237702615" duration="75000" />
     </task>
     <servers />
   </component>
